@@ -1,0 +1,5 @@
+/Users/georgewaller/RiderProjects/object oriented queue/object oriented queue/bin/Debug/object_oriented_queue.exe
+/Users/georgewaller/RiderProjects/object oriented queue/object oriented queue/bin/Debug/object_oriented_queue.pdb
+/Users/georgewaller/RiderProjects/object oriented queue/object oriented queue/obj/Debug/object oriented queue.csprojAssemblyReference.cache
+/Users/georgewaller/RiderProjects/object oriented queue/object oriented queue/obj/Debug/object_oriented_queue.exe
+/Users/georgewaller/RiderProjects/object oriented queue/object oriented queue/obj/Debug/object_oriented_queue.pdb
