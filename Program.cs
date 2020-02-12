@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace object_oriented_queue
 {
@@ -89,6 +90,85 @@ namespace object_oriented_queue
                     Console.WriteLine("index: " + i + " = " + memory[i]);
                 }
             }
+            
+            //size
+            public int Size()
+            {
+                int count = 0;
+                for (int i = 0; i < memorysize; i++)
+                {
+                    if (memory[i] != null)
+                    {
+                        count += 1;
+                    }
+                }
+
+                return count;
+            }
+        }
+        
+        //stack
+        private class Stack : ADT
+        {
+            //constructor
+            public Stack(int newmemorysize) : base(newmemorysize)
+            {
+                CreateMemory(memorysize);
+            }
+            
+            //pop
+            public string pop()
+            {
+                return this.peek(true);
+            }
+            
+            //peek
+            public string peek(bool pop)
+            {
+                if (this.isEmpty() == true)
+                {
+                    return "Stack is empty...";
+                }
+
+                string popitem;
+
+                for (int i = memorysize - 1; i > 0; i--)
+                {
+                    if (memory[i] != null)
+                    {
+                        popitem = memory[i];
+                        
+                        if (pop)
+                        {
+                            memory[i] = null;
+                        }
+
+                        return popitem;
+                    }
+                }
+
+                return "Stack is empty...";
+            }
+            
+            //push
+            public void push(string newitem)
+            {
+                if (this.isFull() == true)
+                {
+                    Console.WriteLine("Stack is full...");
+                    return;
+                }
+                
+                for (int i = 0; i < memorysize; i++)
+                {
+                    if (memory[i] == null)
+                    {
+                        memory[i] = newitem;
+                        return;
+                    }
+                }
+            }
+            
         }
         
         //inherited queue class
@@ -290,8 +370,22 @@ namespace object_oriented_queue
             q2.enQueue("orange");
             q2.show();
             
-            
-            
+            //stack
+            Console.WriteLine("\n\nStack");
+            var s = new Stack(5);
+            Console.WriteLine("is empty: " + s.isEmpty().ToString());
+            s.push("red");
+            s.push("green");
+            s.push("Blue");
+            s.show();
+            s.peek(false);
+            s.pop();
+            s.push("Orange");
+            s.push("Indigo");
+            s.push("Violet");
+            Console.WriteLine("\nis full: " + s.isFull().ToString());
+            s.show();
+
         }
     }
 }
